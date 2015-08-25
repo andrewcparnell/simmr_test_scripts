@@ -9,7 +9,7 @@ install.packages('simmr')
 # github master
 devtools::install_github('andrewcparnell/simmr')
 # github develop
-devtools::install_github('andrewcparnell/simmr',ref='develop')
+devtools::install_github('andrewcparnell/simmr',ref='develop',build_vignettes=TRUE)
 
 # Load in
 library(simmr)
@@ -127,7 +127,8 @@ summary(simmr_5_out,type=c('quantiles','statistics'),group=c(1,3))
 
 # Plot - only a single group allowed
 plot(simmr_5_out,type='boxplot',group=2,title='simmr output group 2')
-plot(simmr_5_out,type=c('density','matrix'),grp=6,title='simmr output group 6')
+plot(simmr_5_out,type=c('density','matrix'),group=c(1,3,6),title='simmr output groups 1, 3 and 6')
+plot(simmr_5_out,type='isospace',group=c(2:5,7),title='simmr isospace groups 2,3,4,5, and 7',xlab=expression(paste(delta^13, "C (\u2030)",sep="")), ylab=expression(paste(delta^15, "N (\u2030)",sep="")))
 
 # Compare within groups
 compare_sources(simmr_5_out,source=c('Zostera','U.lactuca'),group=2)
