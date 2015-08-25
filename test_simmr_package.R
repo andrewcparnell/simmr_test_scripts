@@ -100,6 +100,12 @@ plot(simmr_1_out,type='histogram')
 plot(simmr_1_out,type='density')
 plot(simmr_1_out,type='matrix')
 
+# Compare two sources
+compare_sources(simmr_1_out,source_names=c('Source A','Source C'))
+
+# Compare multiple sources
+compare_sources(simmr_1_out)
+
 #####################################################################################
 
 # No try and get it working on just one observation
